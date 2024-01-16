@@ -14,7 +14,12 @@ $story_text3 = get_field('text3');
 $story_text4 = get_field('text4');
 $story_image2 = get_field('image2');
 $team_title = get_field('team_title');
+$team_name = get_field('team_name');
+$team_description = get_field('team_description');
+$team_image = get_field('team_image');
+$team_quote = get_field('team_quote');
 $sponso_title = get_field('sponso_title');
+
 
 ?>
 
@@ -72,45 +77,57 @@ $sponso_title = get_field('sponso_title');
             </h2>
         </div>
         <div class="container">
-            <div>
-                <p>
-                    <?php
-                    echo $story_text1;
-                    ?>
-                </p>
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/Ellipse1.svg" alt="" width="210px" height="245px" />
-                <img src="<?php echo ($story_image1['sizes']['presentation']); ?>" alt="" />
+            <div class="text1">
+                <div class="text">
+                    <p>
+                        <?php
+                        echo $story_text1;
+                        ?>
+                    </p>
+                </div>
+                <div class="image">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/Ellipse1.svg" alt="" width="210px" height="245px" />
+                    <img src="<?php echo ($story_image1['sizes']['presentation']); ?>" alt="" />
+                </div>
             </div>
-            <div>
-                <p>
-                    <?php
-                    echo $story_title2;
-                    ?>
-                </p>
-                <p>
+            <div class="text2">
+                <div class="image">
+                    <p class="title">
+                        <?php
+                        echo $story_title2;
+                        ?>
+                    </p>
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/Ellipse3.svg" alt="" width="360px" height="215px" />
-                    <?php
-                    $rows =  get_field('diploma');
-                    echo '<ul>';
-                    foreach ($rows as $row) {
-                        echo '<li>', $row['text_diploma'], '</li>';
-                    }
-                    ?>
-                </p>
-                <p>
-                    <?php
-                    echo $story_text3;
-                    ?>
-                </p>
+                    <p class="list">
+                        <?php
+                        $rows =  get_field('diploma');
+                        echo '<ul>';
+                        foreach ($rows as $row) {
+                            echo '<li>', $row['text_diploma'], '</li>';
+                        }
+                        ?>
+                    </p>
+                </div>
+                <div class="text">
+                    <p>
+                        <?php
+                        echo $story_text3;
+                        ?>
+                    </p>
+                </div>
             </div>
-            <div>
-                <p>
-                    <?php
-                    echo $story_text4;
-                    ?>
-                </p>
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/Ellipse3.svg" alt="" width="350px" height="240px" />
-                <img src="<?php echo ($story_image2['sizes']['medium']); ?>" alt="" />
+            <div class="text3">
+                <div class="text">
+                    <p>
+                        <?php
+                        echo $story_text4;
+                        ?>
+                    </p>
+                </div>
+                <div class="image">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/Ellipse3.svg" alt="" width="350px" height="240px" />
+                    <img src="<?php echo ($story_image2['sizes']['presentation2']); ?>" alt="" />
+                </div>
             </div>
         </div>
     </section>
@@ -123,6 +140,48 @@ $sponso_title = get_field('sponso_title');
                 echo $team_title;
                 ?>
             </h2>
+        </div>
+        <div class="presentation">
+            <div class="scene scene--card">
+                <div class="card">
+                    <div class="card__face card__face--front">
+                        <div class="image">
+                            <img src="<?php echo ($team_image['sizes']['presentation']); ?>" alt="" />
+                        </div>
+                        <div class="text">
+                            <p>
+                                <?php
+                                echo $team_name;
+                                ?>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <div class="title">
+                            <p>
+                                <?php
+                                echo $team_name;
+                                ?>
+                            </p>
+                        </div>
+                        <div class="text">
+                            <p>
+                                <?php
+                                echo $team_description;
+                                ?>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quote">
+                <p>
+                    <?php
+                    echo $team_quote;
+                    ?>
+                </p>
+            </div>
         </div>
     </section>
 

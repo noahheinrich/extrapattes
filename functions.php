@@ -31,3 +31,4 @@ add_image_size('news_background', 400, 240, ['center', 'center']);
 add_image_size('gallery', 400, 'false', ['center', 'center']);
 add_image_size('banner', 1440, 265, ['center', 'center']);
 add_image_size('presentation', 250, 370, ['center', 'center']);
+add_image_size('presentation2', 365, 300, ['center', 'center']);
