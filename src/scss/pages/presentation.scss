@@ -1,0 +1,41 @@
+.values{
+    margin-bottom: 100px;
+    margin-top: 50px;
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+
+        .intro{
+            font-family: 'Inter';
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+        }
+        
+        .container_values{
+            display: flex;
+            flex-direction: column;
+            .images {
+                display: flex;
+                gap: 100px;
+            }
+
+            .texts{
+                display: flex;
+                gap: 100px;
+                font-family: 'Inter';
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+
+                p{
+                    width: 250px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

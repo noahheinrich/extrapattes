@@ -4,6 +4,18 @@ get_header();
 
 $banner_title = get_field('banner_title');
 $banner_image = get_field('banner_image');
+$values_title = get_field('values_title');
+$values_introduction = get_field('values_introduction');
+$story_title = get_field('story_title');
+$story_text1 = get_field('text1');
+$story_image1 = get_field('image1');
+$story_title2 = get_field('title_text2');
+$story_text3 = get_field('text3');
+$story_text4 = get_field('text4');
+$story_image2 = get_field('image2');
+$team_title = get_field('team_title');
+$sponso_title = get_field('sponso_title');
+
 ?>
 
 <section class="bannerF">
@@ -17,13 +29,112 @@ $banner_image = get_field('banner_image');
 </section>
 <div class="wrap">
     <section class="values">
-
+        <div class="h2-title">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/valeur.svg" alt="" width="100px" height="100px" />
+            <h2>
+                <?php
+                echo $story_title;
+                ?>
+            </h2>
+        </div>
+        <div class="container">
+            <div class="intro">
+                <p>
+                    <?php
+                    echo $values_introduction;
+                    ?>
+                </p>
+            </div>
+            <div class="container_values">
+                <div class="images">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/respect1.svg" alt="" width="250px" height="250px" />
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/connexion1.svg" alt="" width="250px" height="250px" />
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/equipe2.svg" alt="" width="250px" height="250px" />
+                </div>
+                <div class="texts">
+                    <?php
+                    $rows = get_field('values');
+                    foreach ($rows as $row) {
+                        echo '<p>', $row['text_value'], '</p>';
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
     </section>
     <section class="story">
-
+        <div class="h2-title">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/plume_histoire.svg" alt="" width="100px" height="100px" />
+            <h2>
+                <?php
+                echo $values_title;
+                ?>
+            </h2>
+        </div>
+        <div class="container">
+            <div>
+                <p>
+                    <?php
+                    echo $story_text1;
+                    ?>
+                </p>
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/Ellipse1.svg" alt="" width="210px" height="245px" />
+                <img src="<?php echo ($story_image1['sizes']['presentation']); ?>" alt="" />
+            </div>
+            <div>
+                <p>
+                    <?php
+                    echo $story_title2;
+                    ?>
+                </p>
+                <p>
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/Ellipse3.svg" alt="" width="360px" height="215px" />
+                    <?php
+                    $rows =  get_field('diploma');
+                    echo '<ul>';
+                    foreach ($rows as $row) {
+                        echo '<li>', $row['text_diploma'], '</li>';
+                    }
+                    ?>
+                </p>
+                <p>
+                    <?php
+                    echo $story_text3;
+                    ?>
+                </p>
+            </div>
+            <div>
+                <p>
+                    <?php
+                    echo $story_text4;
+                    ?>
+                </p>
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/Ellipse3.svg" alt="" width="350px" height="240px" />
+                <img src="<?php echo ($story_image2['sizes']['medium']); ?>" alt="" />
+            </div>
+        </div>
     </section>
-    <section class="team">
 
+    <section class="team">
+        <div class="h2-title">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/equipe.svg" alt="" width="100px" height="100px" />
+            <h2>
+                <?php
+                echo $team_title;
+                ?>
+            </h2>
+        </div>
+    </section>
+
+    <section class="sponsors">
+        <div class="h2-title">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/feuille.svg" alt="" width="100px" height="100px" />
+            <h2>
+                <?php
+                echo $sponso_title;
+                ?>
+            </h2>
+        </div>
     </section>
 </div>
 
