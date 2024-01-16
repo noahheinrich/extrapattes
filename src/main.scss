@@ -1,0 +1,33 @@
+
+@import "scss/reset.scss";
+@import "scss/font.scss";
+
+@import "scss/pages/home.scss";
+
+.wrap {
+  // 100px padding left and right
+  margin: 0 100px;
+}
+
+a{
+  // remove underline
+  text-decoration: none;
+}
+
+
+
+.h2-title{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 50px;
+  
+  h2{
+    color: #038B99;
+    font-family: 'Berlin Sans FB Demi';
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    margin-left: 10px;
+  }
+}
