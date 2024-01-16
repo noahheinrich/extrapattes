@@ -32,3 +32,5 @@ add_image_size('gallery', 400, 'false', ['center', 'center']);
 add_image_size('banner', 1440, 265, ['center', 'center']);
 add_image_size('presentation', 250, 370, ['center', 'center']);
 add_image_size('presentation2', 365, 300, ['center', 'center']);
+add_image_size('card', 290, 290, ['center', 'center']);
+add_image_size('full_card', 330, 390, ['center', 'center']); 

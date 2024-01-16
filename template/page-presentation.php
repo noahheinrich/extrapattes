@@ -143,10 +143,10 @@ $sponso_title = get_field('sponso_title');
         </div>
         <div class="presentation">
             <div class="scene scene--card">
-                <div class="card">
+                <div class="card" onclick="this.classList.toggle('is-flipped')">
                     <div class="card__face card__face--front">
                         <div class="image">
-                            <img src="<?php echo ($team_image['sizes']['presentation']); ?>" alt="" />
+                            <img src="<?php echo ($team_image['sizes']['card']); ?>" alt="" />
                         </div>
                         <div class="text">
                             <p>
@@ -174,7 +174,7 @@ $sponso_title = get_field('sponso_title');
                     </div>
                 </div>
             </div>
-            
+
             <div class="quote">
                 <p>
                     <?php
@@ -182,6 +182,37 @@ $sponso_title = get_field('sponso_title');
                     ?>
                 </p>
             </div>
+        </div>
+        <div class="container">
+            <?php
+            $rows = get_field('team_presentation');
+            foreach ($rows as $row) {
+                $randomDegree = rand(-5, 5);
+                echo '<div class="team-rect" style="transform: rotate(' . $randomDegree . 'deg);">';
+                    echo '<div class="scene scene--card">';
+                        echo '<div class="card" onclick="this.classList.toggle(\'is-flipped\')">';
+                            echo '<div class="card__face card__face--front">';
+                                echo '<div class="image">';
+                                    echo '<img src="' . $row['dog_picture']['sizes']['card'] . '" alt="">';
+                                echo '</div>';
+                                echo '<div class="text">';
+                                    echo '<p>', $row['dog_name'], '</p>';
+                                echo '</div>';
+                            echo '</div>';
+                            echo '<div class="card__face card__face--back">';
+                                echo '<div class="title">';
+                                    echo '<p>', $row['dog_name'], '</p>';
+                                echo '</div>';
+                                echo '<div class="text">';
+                                    echo '<p>', $row['dog_nickname'], '</p>';
+                                    echo '<p>', $row['dog_description'], '</p>';
+                                echo '</div>';
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</div>';
+                echo '</div>';       
+            }
+            ?>
         </div>
     </section>
 
@@ -194,6 +225,7 @@ $sponso_title = get_field('sponso_title');
                 ?>
             </h2>
         </div>
+        
     </section>
 </div>
 
