@@ -225,7 +225,15 @@ $sponso_title = get_field('sponso_title');
                 ?>
             </h2>
         </div>
-        
+        <div class="container">
+            <?php
+            $images = get_field('sponso_logo');
+            foreach ($images as $image) {
+                echo '<div class="sponsor-rect">';
+                    echo '<img src="' . $image['sizes']['sponsor'] . '" alt="' . $image['alt'] . '" />';
+                echo '</div>';
+            }
+            ?>
     </section>
 </div>
 
