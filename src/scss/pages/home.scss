@@ -195,12 +195,6 @@
                 
             }
             
-            &:not(:nth-child(2)) {
-                .gallery-column-original, .gallery-column-clone {
-                    
-                } 
-            }
-
             // le deuxième enfant
             &:nth-child(2) {
                 .gallery-column-original, .gallery-column-clone{

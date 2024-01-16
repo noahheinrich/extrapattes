@@ -29,3 +29,4 @@ acf_add_options_page();
 add_image_size('background', 1440, 780, ['center', 'center']);
 add_image_size('news_background', 400, 240, ['center', 'center']);
 add_image_size('gallery', 400, 'false', ['center', 'center']);
+add_image_size('banner', 1440, 265, ['center', 'center']);
