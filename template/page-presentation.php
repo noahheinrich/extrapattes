@@ -143,7 +143,7 @@ $sponso_title = get_field('sponso_title');
         </div>
         <div class="presentation">
             <div class="scene scene--card">
-                <div class="card" onclick="this.classList.toggle('is-flipped')">
+                <div class="card">
                     <div class="card__face card__face--front">
                         <div class="image">
                             <img src="<?php echo ($team_image['sizes']['card']); ?>" alt="" />
@@ -156,7 +156,7 @@ $sponso_title = get_field('sponso_title');
                             </p>
                         </div>
                     </div>
-                    <div class="card__face card__face--back">
+                    <div class="card__face card__face--back" style="background-image: url(<?php echo ($team_image['sizes']['full_card']); ?>);">
                         <div class="title">
                             <p>
                                 <?php
@@ -188,29 +188,37 @@ $sponso_title = get_field('sponso_title');
             $rows = get_field('team_presentation');
             foreach ($rows as $row) {
                 $randomDegree = rand(-5, 5);
-                echo '<div class="team-rect" style="transform: rotate(' . $randomDegree . 'deg);">';
-                    echo '<div class="scene scene--card">';
-                        echo '<div class="card" onclick="this.classList.toggle(\'is-flipped\')">';
-                            echo '<div class="card__face card__face--front">';
-                                echo '<div class="image">';
-                                    echo '<img src="' . $row['dog_picture']['sizes']['card'] . '" alt="">';
-                                echo '</div>';
-                                echo '<div class="text">';
+            ?>
+                <div class="team-rect" style="transform: rotate(<?php echo $randomDegree; ?>deg);">
+                    <div class="scene scene--card">
+                        <div class="card">
+                            <div class="card__face card__face--front">
+                                <div class="image">
+                                    <img src="<?php echo $row['dog_picture']['sizes']['card']; ?> " alt="">
+                                </div>
+                                <div class="text">
+                                    <?php
                                     echo '<p>', $row['dog_name'], '</p>';
-                                echo '</div>';
-                            echo '</div>';
-                            echo '<div class="card__face card__face--back">';
-                                echo '<div class="title">';
+                                    ?>
+                                </div>
+                            </div>
+                            <div class="card__face card__face--back" style="background-image: url('<?php echo $team_image['sizes']['full_card']; ?>');">
+                                <div class="title">
+                                    <?php
                                     echo '<p>', $row['dog_name'], '</p>';
-                                echo '</div>';
-                                echo '<div class="text">';
-                                    echo '<p>', $row['dog_nickname'], '</p>';
-                                    echo '<p>', $row['dog_description'], '</p>';
-                                echo '</div>';
-                            echo '</div>';
-                        echo '</div>';
-                    echo '</div>';
-                echo '</div>';       
+                                    ?>
+                                </div>
+                                <div class="text">
+                                    <?php
+                                    echo '<p class="nickname">', $row['dog_nickname'], '</p>';
+                                    echo '<p class="description">', $row['dog_description'], '</p>';
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php
             }
             ?>
         </div>
@@ -230,7 +238,7 @@ $sponso_title = get_field('sponso_title');
             $images = get_field('sponso_logo');
             foreach ($images as $image) {
                 echo '<div class="sponsor-rect">';
-                    echo '<img src="' . $image['sizes']['sponsor'] . '" alt="' . $image['alt'] . '" />';
+                echo '<img src="' . $image['sizes']['sponsor'] . '" alt="' . $image['alt'] . '" />';
                 echo '</div>';
             }
             ?>

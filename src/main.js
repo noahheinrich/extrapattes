@@ -2,6 +2,7 @@
 __webpack_public_path__ = window.WP.publicPath; // WP.publicPath come from functions.php
 
 import './main.scss'
+import './js/card_flip.js'
 import Router from './utils/Router'
 
 // Small router inspired from Sage framework, which use body class from WordPress

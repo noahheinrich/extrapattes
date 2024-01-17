@@ -160,7 +160,7 @@
             display: inline-block;
             width: 330px;
             height: 390px;
-            border: 3px solid #A7D2E3;
+            
             border-radius: 16px;
             perspective: 600px;
     
@@ -172,6 +172,8 @@
                 cursor: pointer;
                 position: relative;
                 transform-origin: center;
+                
+                border-radius: 16px;
     
                 &.is-flipped {
                     transform: rotateY(180deg);
@@ -184,11 +186,25 @@
                     backface-visibility: hidden;
                     display: flex;
                     align-items: center;
-                    justify-content: center;
                     flex-direction: column;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background-image: inherit;
+                        filter: blur(10px);
+                        z-index: -1;
+                    }
     
                     &--front {
                         background: white; // Assume you want a white background
+                        border: 3px solid #A7D2E3;
+                        border-radius: 16px;
+                        justify-content: center;
 
                         .text {
                             color: #000;
@@ -215,7 +231,7 @@
                         flex-direction: column;
                         align-items: center;
                         gap: 10px;
-                        margin: 20px 23px 0 23px;
+                        border-radius: 16px;
 
                         .title{
                             color: #000;
@@ -223,6 +239,7 @@
                             font-size: 48px;
                             font-style: normal;
                             font-weight: 400;
+                            margin-top: 20px;
                         }
 
                         .text{
@@ -230,6 +247,9 @@
                             font-size: 18px;
                             font-style: normal;
                             font-weight: 500;
+                            width: 285px;
+                            line-height: 150%;
+
                         }
                     }
                 }
@@ -259,7 +279,7 @@
                 display: inline-block;
                 width: 330px;
                 height: 390px;
-                border: 3px solid #A7D2E3;
+                
                 border-radius: 16px;
                 perspective: 600px;
         
@@ -283,11 +303,14 @@
                         backface-visibility: hidden;
                         display: flex;
                         align-items: center;
-                        justify-content: center;
+                        
                         flex-direction: column;
         
                         &--front {
                             background: white; // Assume you want a white background
+                            border: 3px solid #A7D2E3;
+                            border-radius: 16px;
+                            justify-content: center;
         
                             .text {
                                 color: #000;
@@ -314,21 +337,37 @@
                             flex-direction: column;
                             align-items: center;
                             gap: 10px;
-                            margin: 20px 23px 0 23px;
+                            border-radius: 16px;
+                            
         
                             .title {
-                                color: #000;
+                                color: #FFF;
                                 font-family: 'Westmeath';
                                 font-size: 48px;
                                 font-style: normal;
                                 font-weight: 400;
+                                margin-top: 20px;
                             }
         
                             .text {
-                                font-family: 'Inter';
-                                font-size: 18px;
-                                font-style: normal;
-                                font-weight: 500;
+                                color: #FFF;
+                                .nickname{
+                                    font-family: 'Berlin Bold';
+                                    font-size: 24px;
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    text-align: center;
+                                    margin-bottom: 10px;
+                                }
+
+                                .description{
+                                    font-family: 'Inter';
+                                    font-size: 18px;
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    width: 285px;
+                                    line-height: 150%;       
+                                }
                             }
                         }
                     }
