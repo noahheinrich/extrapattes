@@ -40,5 +40,8 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.7.2",
     "webpack-notifier": "^1.15.0"
+  },
+  "dependencies": {
+    "gsap": "^3.12.4"
   }
 }
