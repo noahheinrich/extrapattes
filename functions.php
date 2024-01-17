@@ -35,3 +35,4 @@ add_image_size('presentation2', 365, 300, ['center', 'center']);
 add_image_size('card', 290, 290, ['center', 'center']);
 add_image_size('full_card', 330, 390, ['center', 'center']); 
 add_image_size('sponsor', 160, 120, ['center', 'center']);
+add_image_size('activity', 400, 225, ['center', 'center']);
