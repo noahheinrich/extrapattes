@@ -18,7 +18,7 @@ $introduction = get_field('introduction');
 <div class="wrap">
     <section class="introduction">
         <div class="image">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/Label_carre.png" alt="" width="" height="" />
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/Label_carre.png" alt="" width="150px" height="150px" />
         </div>
         <div class="content">
             <p>
@@ -30,8 +30,8 @@ $introduction = get_field('introduction');
     </section>
     <section class="filter">
         <div class="button">
-            <p>Activités hiver</p>
-            <p>Activités 4 saisons</p>
+            <p class="winter">Activités hiver</p>
+            <p class="others">Activités 4 saisons</p>
         </div>
     </section>
     <section class="activities">
