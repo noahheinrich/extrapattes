@@ -98,6 +98,10 @@
                 display: flex;
                 flex-direction: column;
 
+                .content{
+                    padding: 40px;
+                }
+
                 .title {
                     font-family: 'Inter';
                     font-size: 16px;
@@ -110,11 +114,10 @@
                     font-size: 14px;
                     font-style: normal;
                     font-weight: 400;
-                    height: 126px;
-                    width: 300px;
+
                 }
 
-                :nth-child(2) {
+                img {
                     position: absolute;
                     left: 0;
                     top: 50%;
@@ -151,224 +154,152 @@
     margin-bottom: 50px;
 
     .presentation {
-
         display: flex;
         flex-direction: row;
-        gap: 50px;
+        gap: 50px;    
+    }
 
-        .scene {
-            display: inline-block;
-            width: 330px;
-            height: 390px;
-            
-            border-radius: 16px;
-            perspective: 600px;
+    .quote{
+        color: #1E1E1E; 
+        text-align: center;
+        font-family: Inter;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+    }
     
-            .card {
+    .container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+        margin-top: 50px;
+    }
+
+    .scene {
+        display: inline-block;
+        width: 330px;
+        height: 390px;
+
+        border-radius: 16px;
+        perspective: 600px;
+
+        .card {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+            cursor: pointer;
+            position: relative;
+            transform-origin: center;
+
+            &.is-flipped {
+                transform: rotateY(180deg);
+            }
+
+
+            .card__face {
+                position: absolute;
                 width: 100%;
                 height: 100%;
-                transform-style: preserve-3d;
-                transition: transform 1s;
-                cursor: pointer;
-                position: relative;
-                transform-origin: center;
-                
-                border-radius: 16px;
-    
-                &.is-flipped {
-                    transform: rotateY(180deg);
-                }
-    
-                .card__face {
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    backface-visibility: hidden;
-                    display: flex;
-                    align-items: center;
-                    flex-direction: column;
+                backface-visibility: hidden;
+                display: flex;
+                align-items: center;
 
-                    &::before {
-                        content: '';
+                flex-direction: column;
+
+                &--front {
+                    background: white; // Assume you want a white background
+                    border: 3px solid #A7D2E3;
+                    border-radius: 16px;
+                    justify-content: center;
+
+                    .text {
+                        color: #000;
+                        font-family: 'Westmeath';
+                        font-size: 48px;
+                        font-style: normal;
+                        font-weight: 400;
+                    }
+                }
+
+                .image {
+                    img {
+                        width: 290px;
+                        height: 290px;
+                        border-radius: 8px;
+                    }
+
+                }
+
+                &--back {
+                    background: white; // Same as front for consistency
+                    transform: rotateY(180deg);
+                    display: inline-flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px;
+                    border-radius: 16px;
+                    position: relative;
+
+                    .image {
+                        overflow: hidden;
+                        border-radius: 16px;
                         position: absolute;
-                        top: 0;
                         left: 0;
                         right: 0;
+                        top: 0;
                         bottom: 0;
-                        background-image: inherit;
-                        filter: blur(10px);
-                        z-index: -1;
-                    }
-    
-                    &--front {
-                        background: white; // Assume you want a white background
-                        border: 3px solid #A7D2E3;
-                        border-radius: 16px;
-                        justify-content: center;
+                        filter: blur(3px);
+                        z-index: 10;
+                        // opacity: 0.8;
 
-                        .text {
-                            color: #000;
-                            font-family: 'Westmeath';
-                            font-size: 48px;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            top: 0;
+                            bottom: 0;
+                            background-color: #000;
+                            z-index: 10;
+                            opacity: 0.5;
+                        }
+                    }
+
+                    .title {
+                        color: #FFF;
+                        font-family: 'Westmeath';
+                        font-size: 48px;
+                        font-style: normal;
+                        font-weight: 400;
+                        margin-top: 20px;
+                        z-index: 15;
+                        position: relative;
+                    }
+
+                    .text {
+                        color: #FFF;
+                        z-index: 15;
+                        position: relative;
+
+                        .nickname {
+                            font-family: 'Berlin Bold';
+                            font-size: 24px;
                             font-style: normal;
-                            font-weight: 400;
-                        }
-                    }
-
-                    .image{
-                        img{
-                            width: 290px;
-                            height: 290px;
-                            border-radius: 8px;
-                        }
-                        
-                    }
-
-                    &--back {
-                        background: white; // Same as front for consistency
-                        transform: rotateY(180deg);
-                        display: inline-flex;
-                        flex-direction: column;
-                        align-items: center;
-                        gap: 10px;
-                        border-radius: 16px;
-
-                        .title{
-                            color: #000;
-                            font-family: 'Westmeath';
-                            font-size: 48px;
-                            font-style: normal;
-                            font-weight: 400;
-                            margin-top: 20px;
+                            font-weight: 700;
+                            text-align: center;
+                            margin-bottom: 10px;
                         }
 
-                        .text{
+                        .description {
                             font-family: 'Inter';
                             font-size: 18px;
                             font-style: normal;
                             font-weight: 500;
                             width: 285px;
                             line-height: 150%;
-
-                        }
-                    }
-                }
-            }
-        }
-
-        .quote{
-            color: #1E1E1E; 
-            text-align: center;
-            font-family: Inter;
-            font-size: 22px;
-            font-style: normal;
-            font-weight: 400;
-            display: flex;
-            align-items: center;
-        }
-    }
-
-    .container{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 50px;
-        margin-top: 50px;
-        
-        .team-rect{
-            .scene {
-                display: inline-block;
-                width: 330px;
-                height: 390px;
-                
-                border-radius: 16px;
-                perspective: 600px;
-        
-                .card {
-                    width: 100%;
-                    height: 100%;
-                    transform-style: preserve-3d;
-                    transition: transform 1s;
-                    cursor: pointer;
-                    position: relative;
-                    transform-origin: center;
-        
-                    &.is-flipped {
-                        transform: rotateY(180deg);
-                    }
-        
-                    .card__face {
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        backface-visibility: hidden;
-                        display: flex;
-                        align-items: center;
-                        
-                        flex-direction: column;
-        
-                        &--front {
-                            background: white; // Assume you want a white background
-                            border: 3px solid #A7D2E3;
-                            border-radius: 16px;
-                            justify-content: center;
-        
-                            .text {
-                                color: #000;
-                                font-family: 'Westmeath';
-                                font-size: 48px;
-                                font-style: normal;
-                                font-weight: 400;
-                            }
-                        }
-        
-                        .image {
-                            img {
-                                width: 290px;
-                                height: 290px;
-                                border-radius: 8px;
-                            }
-        
-                        }
-        
-                        &--back {
-                            background: white; // Same as front for consistency
-                            transform: rotateY(180deg);
-                            display: inline-flex;
-                            flex-direction: column;
-                            align-items: center;
-                            gap: 10px;
-                            border-radius: 16px;
-                            
-        
-                            .title {
-                                color: #FFF;
-                                font-family: 'Westmeath';
-                                font-size: 48px;
-                                font-style: normal;
-                                font-weight: 400;
-                                margin-top: 20px;
-                            }
-        
-                            .text {
-                                color: #FFF;
-                                .nickname{
-                                    font-family: 'Berlin Bold';
-                                    font-size: 24px;
-                                    font-style: normal;
-                                    font-weight: 700;
-                                    text-align: center;
-                                    margin-bottom: 10px;
-                                }
-
-                                .description{
-                                    font-family: 'Inter';
-                                    font-size: 18px;
-                                    font-style: normal;
-                                    font-weight: 500;
-                                    width: 285px;
-                                    line-height: 150%;       
-                                }
-                            }
                         }
                     }
                 }

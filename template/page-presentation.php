@@ -92,21 +92,26 @@ $sponso_title = get_field('sponso_title');
             </div>
             <div class="text2">
                 <div class="image">
-                    <p class="title">
-                        <?php
-                        echo $story_title2;
-                        ?>
-                    </p>
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/Ellipse3.svg" alt="" width="360px" height="215px" />
-                    <p class="list">
-                        <?php
-                        $rows =  get_field('diploma');
-                        echo '<ul>';
-                        foreach ($rows as $row) {
-                            echo '<li>', $row['text_diploma'], '</li>';
-                        }
-                        ?>
-                    </p>
+                    <div class="content">
+                        <p class="title">
+
+                            <?php
+                            echo $story_title2;
+                            ?>
+                        </p>
+
+                        <p class="list">
+                            <?php
+                            $rows =  get_field('diploma');
+                            echo '<ul>';
+                            foreach ($rows as $row) {
+                                echo '<li>', $row['text_diploma'], '</li>';
+                            }
+                            ?>
+                        </p>
+                    </div>
+
                 </div>
                 <div class="text">
                     <p>
@@ -142,7 +147,7 @@ $sponso_title = get_field('sponso_title');
             </h2>
         </div>
         <div class="presentation">
-            <div class="scene scene--card">
+            <div class="scene scene--card" style="transform: rotate(1deg);">
                 <div class="card">
                     <div class="card__face card__face--front">
                         <div class="image">
@@ -156,20 +161,18 @@ $sponso_title = get_field('sponso_title');
                             </p>
                         </div>
                     </div>
+
                     <div class="card__face card__face--back" style="background-image: url(<?php echo ($team_image['sizes']['full_card']); ?>);">
+                        <div class="image" style="background-image: url('<?php echo $team_image['sizes']['full_card']; ?>');"></div>
                         <div class="title">
-                            <p>
-                                <?php
-                                echo $team_name;
-                                ?>
-                            </p>
+                            <?php
+                            echo '<p>', $team_name, '</p>';
+                            ?>
                         </div>
                         <div class="text">
-                            <p>
-                                <?php
-                                echo $team_description;
-                                ?>
-                            </p>
+                            <?php
+                            echo '<p class="description">', $team_description, '</p>';
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -189,31 +192,30 @@ $sponso_title = get_field('sponso_title');
             foreach ($rows as $row) {
                 $randomDegree = rand(-5, 5);
             ?>
-                <div class="team-rect" style="transform: rotate(<?php echo $randomDegree; ?>deg);">
-                    <div class="scene scene--card">
-                        <div class="card">
-                            <div class="card__face card__face--front">
-                                <div class="image">
-                                    <img src="<?php echo $row['dog_picture']['sizes']['card']; ?> " alt="">
-                                </div>
-                                <div class="text">
-                                    <?php
-                                    echo '<p>', $row['dog_name'], '</p>';
-                                    ?>
-                                </div>
+                <div class="scene scene--card" style="transform: rotate(<?php echo $randomDegree; ?>deg);">
+                    <div class="card">
+                        <div class="card__face card__face--front">
+                            <div class="image">
+                                <img src="<?php echo $row['dog_picture']['sizes']['card']; ?> " alt="">
                             </div>
-                            <div class="card__face card__face--back" style="background-image: url('<?php echo $team_image['sizes']['full_card']; ?>');">
-                                <div class="title">
-                                    <?php
-                                    echo '<p>', $row['dog_name'], '</p>';
-                                    ?>
-                                </div>
-                                <div class="text">
-                                    <?php
-                                    echo '<p class="nickname">', $row['dog_nickname'], '</p>';
-                                    echo '<p class="description">', $row['dog_description'], '</p>';
-                                    ?>
-                                </div>
+                            <div class="text">
+                                <?php
+                                echo '<p>', $row['dog_name'], '</p>';
+                                ?>
+                            </div>
+                        </div>
+                        <div class="card__face card__face--back">
+                            <div class="image" style="background-image: url('<?php echo $team_image['sizes']['full_card']; ?>');"></div>
+                            <div class="title">
+                                <?php
+                                echo '<p>', $row['dog_name'], '</p>';
+                                ?>
+                            </div>
+                            <div class="text">
+                                <?php
+                                echo '<p class="nickname">', $row['dog_nickname'], '</p>';
+                                echo '<p class="description">', $row['dog_description'], '</p>';
+                                ?>
                             </div>
                         </div>
                     </div>
