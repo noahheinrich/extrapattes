@@ -29,7 +29,62 @@
         margin-top: 50px;
         margin-bottom: 50px;
 
-        
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            
+            input[type=text],
+            input[type=email],
+            input[type=tel],
+            textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+
+                &:focus {
+                    outline: none;
+                    border-color: #038B99;
+                }
+            }
+
+            .form-group {
+                margin-bottom: 15px;
+            }
+
+            .form-group-inline {
+                display: flex;
+                justify-content: space-between;
+                
+                .form-group {
+                    flex: 1;
+                    margin-right: 10px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                }
+            }
+
+            button{
+                display: flex;
+                padding: 20px 24px;
+                justify-content: center;
+                margin-left: auto;
+                border-radius: 100px;
+                background: #EBC246;
+                font-family: 'Inter';
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 500;
+                border: none;
+                width: 150px;
+
+
+            }
+        }
     }
 
 }

@@ -88,27 +88,35 @@ $coord_facebook = get_field('coord_facebook');
                     FORMULAIRE
                 </h2>
             </div>
-            <form action="" method="post">
-                <fieldset>
-                    <input type="text" name="lastname" placeholder="Nom" required>
-                </fieldset>
-                <fieldset>
-                    <input type="text" name="firstname" placeholder="Prénom" required>
-                </fieldset>
-                <fieldset>
-                    <input type="text" name="firstname" placeholder="E-mail*" required>
-                </fieldset>
-                <fieldset>
-                    <input type="text" name="firstname" placeholder="Téléphone" required>
-                </fieldset>
-                <fieldset>
-                    <input type="text" name="firstname" placeholder="Objet" required>
-                </fieldset>
-                <fieldset>
-                    <input type="text" name="firstname" placeholder="Message" required>
-                </fieldset>
-                <button name="submit">Envoyer</button>
-            </form>
+            <div class="form-container">
+                <form action="" method="post">
+                    <div class="form-group-inline">
+                        <div class="form-group">
+                            <input type="text" placeholder="Prénom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Nom" required>
+                        </div>
+                    </div>
+                    <div class="form-group-inline">
+                        <div class="form-group">
+                            <input type="email" placeholder="E-mail*" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Téléphone*" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Objet">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Message" rows="5"></textarea>
+                    </div>
+                    <div class="button">
+                        <button type="submit" name="submit">Envoyer</button>
+                    </div>
+                </form>
+            </div>
         </section>
     </div>
 </div>

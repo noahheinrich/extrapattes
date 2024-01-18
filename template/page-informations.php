@@ -160,14 +160,31 @@ $faq_title = get_field('faq_title');
         </div>
         <div class="container">
             <?php
-            // $rows = get_field('faq');
-            // echo '<pre>';
-            // var_dump($rows);
-            // echo '</pre>';
-            // foreach ($rows as $row) {
+            $rows = get_field('faq');
+            foreach ($rows as $row) {
+                //var_dump($row['question_answers']);
+                echo '<div class="faq-rect">';
+                echo '<div class="title">';
+                echo '<p>', $row['theme'], '</p>';
+                echo '</div>';
+                echo '<div class="contents">';
+                foreach ($row['question_answers'] as $question_answer) {
+                    //var_dump($question_answer);
+                    echo '<div class="content">';
+                    echo '<div class="question">';
+                    echo '<p>', $question_answer['question'], '</p>';
+                    echo '</div>';
+                    echo '<div class="answer">';
+                    echo '<p>', $question_answer['answer'], '</p>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+                echo '</div>';
+                echo '</div>';
+            }
             //     echo '<div class="faq-rect">';
             //     echo '<p>', $row['theme'], '</p>';
-            //     $questions_answers = get_sub_field('question_answers');
+            //     $questions_answers = get_field('question_answers');
             //     var_dump($questions_answers);
             //     foreach ($questions_answers as $question_answer) {
             //         echo '<div class="content">';
@@ -180,7 +197,7 @@ $faq_title = get_field('faq_title');
             //         echo '</div>';
             //     }
             //     echo '</div>';
-            // }
+            //  }
             ?>
         </div>
     </section>
