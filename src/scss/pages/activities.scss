@@ -79,7 +79,6 @@
                 border-radius: 16px;
                 border: 2px solid #A7D2E3;
                 background: #FFF;
-                //overflow: hidden;
                 transform-style: preserve-3d;
                 transition: transform 1s;
                 position: relative;
@@ -125,6 +124,7 @@
                             img {
                                 width: 100%;
                                 display: block;
+                                border-radius: 8px 8px 0px 0px;
                             }
         
                         }
@@ -175,6 +175,19 @@
                                             font-size: 16px;
                                             font-style: normal;
                                             font-weight: 400;
+                                        }
+                                    }
+
+                                    .difficulty{
+                                        display: flex;
+                                        flex-direction: row;
+                                        align-items: center;
+                                        justify-content: space-between;
+
+                                        .image{
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 5px;
                                         }
                                     }
                                 }
@@ -254,6 +267,7 @@
                                     align-items: center;
                                     border-radius: 100px;
                                     border: 2px solid #038B99;
+                                    cursor: pointer;
                                 }
         
                                 a{
@@ -285,9 +299,70 @@
                         width: 100%;
                         height: 100%;
                         z-index: 10;
+                        cursor: pointer;
 
                         .back{
-                            
+                            display: flex;
+                            flex-direction: column;
+                            padding: 20px 0px;
+                            justify-content: space-between;
+                            align-items: center;
+                            border-radius: 16px;
+                          
+
+                            .condition{
+                                display: flex;
+                                text-align: right;
+                                font-family: 'Inter';
+                                font-size: 12px;
+                                font-style: italic;
+                                font-weight: 700;
+                                line-height: 150%;
+                                color: #E15050;
+                                width: 225px;
+                            }
+
+                            .description{
+                                font-family: 'Inter';
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 150%;
+                                width: 350px;
+                            }
+
+                            .buttons{
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+
+                                .condition-button{
+                                    display: flex;
+                                    padding: 14px;
+                                    justify-content: center;
+                                    align-items: center;
+                                    border-radius: 100px;
+                                    border: 2px solid #038B99;
+                                    font-family: 'Inter';
+                                    font-size: 15px;
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    color: #038B99;
+                                }
+
+                                .reservation-button{
+                                    display: flex;
+                                    padding: 14px;
+                                    justify-content: center;
+                                    align-items: center;
+                                    border-radius: 100px;
+                                    background: #EBC246;
+                                    font-family: 'Inter';
+                                    font-size: 15px;
+                                    font-style: normal;
+                                    font-weight: 500;
+                                }
+                            }
                         }
                     }
                 }

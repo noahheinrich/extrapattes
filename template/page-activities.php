@@ -73,8 +73,13 @@ var_dump(get_the_id());
                                             <p><?php echo $row['time'] ?></p>
                                         </div>
                                         <div class="difficulty">
-                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/personne2.svg" alt="" width="25px" height="25px" />
-                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/<?php echo $row['difficulty'] ?>.svg" alt="" width="" height="12px" />
+                                            <div class="image">
+                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/personne2.svg" alt="" width="25px" height="25px" />
+                                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/<?php echo $row['difficulty'] ?>.svg" alt="" width="" height="12px" />
+                                            </div>
+                                            <div class="text">
+                                                <p><?php echo $row['difficulty'] ?></p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -112,8 +117,8 @@ var_dump(get_the_id());
                                     <p><?php echo $row['activity_description'] ?></p>
                                 </div>
                                 <div class="buttons">
-                                    <a class="condition-button" href="<?php the_field('condition_link'); ?>">Conditions d'activités</a>
-                                    <a href="<?php echo $row['booking']; ?>">Réserver</a>
+                                    <a class="condition-button" href="<?php echo get_page_link('206')?>#<?php echo $row['condition_section']?>">Conditions d'activités</a>
+                                    <a class="reservation-button" href="<?php echo $row['booking']; ?>">Réserver</a>
                                 </div>
                             </div>
                         </div>
