@@ -19,7 +19,6 @@ $goodies_title = get_field('goodies_title');
 $goodies_subtitle = get_field('goodies_subtitle');
 
 $faq_title = get_field('faq_title');
-var_dump(get_the_id());
 ?>
 
 <section class="bannerF">

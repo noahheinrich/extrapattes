@@ -4,6 +4,8 @@ get_header();
 $banner_title = get_field('banner_title');
 $banner_image = get_field('banner_image');
 $introduction = get_field('introduction');
+
+var_dump(get_the_id());
 ?>
 
 <section class="bannerF">

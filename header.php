@@ -24,4 +24,30 @@
                 <a class="button" href="<?php echo (get_field('reservation_link', 'option')); ?>">Réserver</a>
             </nav>
         </div>
+        <section class="panel">
+            <div class="place">
+                <?php
+                $rows = get_field('disponibility', 'option');
+                foreach ($rows as $row) {
+                    echo '<div class="info">';
+                    echo '<div class="date">';
+                    echo $row['date'];
+                    echo '</div>';
+                    echo '<div class="card">';
+                    echo '<div class="content">';
+                    echo '<div class="text">';
+                    echo '<p class="title">' . $row['title'] . '</p>';
+                    echo '<p class="spec">' . $row['specification'] . '</p>';
+                    echo '</div>';
+                ?>
+                    <a href="<?php echo get_page_link('12') ?>"> <?php echo $row['button'] ?></a>
+                    <?php echo "</div>"; ?>
+                    <img src="<?php echo ($row['image']['sizes']['panel']); ?>" alt="" />
+                <?php
+                    echo '</div>';
+                    echo '</div>';
+                }
+                ?>
+            </div>
+        </section>
     </header>
