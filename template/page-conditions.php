@@ -20,62 +20,63 @@ var_dump(get_the_id());
         </h1>
     </div>
 </section>
-
-<div class="wrap">
-    <section class="winter">
-        <div class="h2-title">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/winter.svg" alt="" width="100px" height="100px" />
-            <h2>
+<div class="conditions">
+    <div class="wrap">
+        <section class="winter">
+            <div class="h2-title">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/winter.svg" alt="" width="100px" height="100px" />
+                <h2>
+                    <?php
+                    echo $winter_title;
+                    ?>
+                </h2>
+            </div>
+            <div class="container">
                 <?php
-                echo $winter_title;
+                $rows = get_field('winter_content');
+                foreach ($rows as $row) :
                 ?>
-            </h2>
-        </div>
-        <div class="container">
-            <?php 
-            $rows = get_field('winter_content');
-            foreach ($rows as $row) :
-            ?>
-                <div class="content">
-                    <div class="title">
-                        <h3><?php echo $row['subtitle']; ?></h3>
+                    <div class="content">
+                        <div class="title">
+                            <h3><?php echo $row['subtitle']; ?></h3>
+                        </div>
+                        <div class="text">
+                            <p><?php echo $row['content']; ?></p>
+                        </div>
                     </div>
-                    <div class="text">
-                        <p><?php echo $row['content']; ?></p>
-                    </div>
-                </div>
-            <?php
-            endforeach;
-            ?>
-        </div>
-    </section>
-    <section class="seasons">
-        <div class="h2-title">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/seasons.svg" alt="" width="100px" height="100px" />
-            <h2>
                 <?php
-                echo $seasons_title;
+                endforeach;
                 ?>
-            </h2>
-        </div>
-        <div class="container">
-            <?php 
-            $rows = get_field('seasons_content');
-            foreach ($rows as $row) :
-            ?>
-                <div class="content">
-                    <div class="title">
-                        <h3><?php echo $row['subtitle']; ?></h3>
+            </div>
+        </section>
+        <section class="seasons">
+            <div class="h2-title">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/seasons.svg" alt="" width="100px" height="100px" />
+                <h2>
+                    <?php
+                    echo $seasons_title;
+                    ?>
+                </h2>
+            </div>
+            <div class="container">
+                <?php
+                $rows = get_field('seasons_content');
+                foreach ($rows as $row) :
+                ?>
+                    <div class="content">
+                        <div class="title">
+                            <h3><?php echo $row['subtitle']; ?></h3>
+                        </div>
+                        <div class="text">
+                            <p><?php echo $row['content']; ?></p>
+                        </div>
                     </div>
-                    <div class="text">
-                        <p><?php echo $row['content']; ?></p>
-                    </div>
-                </div>
-            <?php
-            endforeach;
-            ?>
-        </div>
-    </section>
+                <?php
+                endforeach;
+                ?>
+            </div>
+        </section>
+    </div>
 </div>
 
 
