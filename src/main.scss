@@ -13,6 +13,10 @@
 @import "scss/pages/contact.scss";
 @import "scss/pages/404.scss";
 
+*{
+  box-sizing: border-box;
+}
+
 .wrap {
   // 100px padding left and right
   margin: 0 100px;
