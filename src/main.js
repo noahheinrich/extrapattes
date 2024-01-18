@@ -5,6 +5,7 @@ import './main.scss'
 import './js/card_flip.js'
 import './js/fold_unfold.js'
 import './js/faq.js'
+import './js/panel.js'
 import Router from './utils/Router'
 
 // Small router inspired from Sage framework, which use body class from WordPress

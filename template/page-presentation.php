@@ -4,20 +4,25 @@ get_header();
 
 $banner_title = get_field('banner_title');
 $banner_image = get_field('banner_image');
+
 $values_title = get_field('values_title');
 $values_introduction = get_field('values_introduction');
+
 $story_title = get_field('story_title');
 $story_text1 = get_field('text1');
 $story_image1 = get_field('image1');
 $story_title2 = get_field('title_text2');
+$certifications = get_field('certifications');
 $story_text3 = get_field('text3');
 $story_text4 = get_field('text4');
 $story_image2 = get_field('image2');
+
 $team_title = get_field('team_title');
 $team_name = get_field('team_name');
 $team_description = get_field('team_description');
 $team_image = get_field('team_image');
 $team_quote = get_field('team_quote');
+
 $sponso_title = get_field('sponso_title');
 
 
@@ -103,11 +108,7 @@ $sponso_title = get_field('sponso_title');
 
                         <p class="list">
                             <?php
-                            $rows =  get_field('diploma');
-                            echo '<ul>';
-                            foreach ($rows as $row) {
-                                echo '<li>', $row['text_diploma'], '</li>';
-                            }
+                            echo $certifications;
                             ?>
                         </p>
                     </div>

@@ -1,3 +1,29 @@
+.overlay {
+    position: fixed;
+    /* Cover the entire viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* Black background with opacity */
+    z-index: 9999;
+    /* Below the panel but above other content */
+    opacity: 0;
+    /* Initially invisible */
+    visibility: hidden;
+    /* Hide it completely initially */
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    /* Smooth transition */
+}
+
+.overlay.active {
+    opacity: 1;
+    /* Fully visible when active */
+    visibility: visible;
+    /* Make it visible when active */
+}
+
 .panel{
     display: flex;
     flex-direction: column;
@@ -7,14 +33,20 @@
     background: #FFF;
     position: fixed;
     top: 0;
-    right: 0;
+    right: -100%;
     bottom: 0;
     width: 585px;
     z-index: 10000;
+    transition: right 0.5s ease-in-out;
+
+    &.active{
+        right: 0;
+    }
 
     .place {
         display: flex;
         flex-direction: row;
+        gap: 10px;
     }
 
     .left{
@@ -22,6 +54,29 @@
         flex-shrink: 0;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        .container-left{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            position: relative;
+
+            .date{
+                font-family: 'Inter';
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+            }   
+
+            .circle{
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
     }
 
     .line{
@@ -29,7 +84,7 @@
         width: 3px;
         position: absolute;
         top: 0;
-        left: 130px;
+        left: 132px;
         background-color: #000000;
     }
 
