@@ -97,21 +97,22 @@ $introduction = get_field('introduction');
                         </div>
                         <div class="card__face card__face--back">
                             <div class="back">
-                            <?php
-                            if ($row['activity_condition'] != null) {
-                            ?>
-                                <div class="condition">
-                                    <p><?php echo $row['activity_condition'] ?></p>
+                                <?php
+                                if ($row['activity_condition'] != null) {
+                                ?>
+                                    <div class="condition">
+                                        <p><?php echo $row['activity_condition'] ?></p>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+                                <div class="description">
+                                    <p><?php echo $row['activity_description'] ?></p>
                                 </div>
-                            <?php
-                            }
-                            ?>
-                            <div class="description">
-                                <p><?php echo $row['activity_description'] ?></p>
-                            </div>
-                            <div class="buttons">
-                                <a class="condition-button" href="<?php the_field('condition_link'); ?>">Conditions d'activités</a>
-                                <a href="<?php echo $row['booking']; ?>">Réserver</a>
+                                <div class="buttons">
+                                    <a class="condition-button" href="<?php the_field('condition_link'); ?>">Conditions d'activités</a>
+                                    <a href="<?php echo $row['booking']; ?>">Réserver</a>
+                                </div>
                             </div>
                         </div>
                     </div>

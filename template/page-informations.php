@@ -19,6 +19,7 @@ $goodies_title = get_field('goodies_title');
 $goodies_subtitle = get_field('goodies_subtitle');
 
 $faq_title = get_field('faq_title');
+var_dump(get_the_id());
 ?>
 
 <section class="bannerF">
@@ -149,7 +150,7 @@ $faq_title = get_field('faq_title');
         </div>
     </section>
 
-    <section class="faq">
+    <section class="faq" id="faq">
         <div class="h2-title">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/faq.svg" alt="" width="100px" height="100px" />
             <h2>

@@ -13,4 +13,8 @@ var activities_cards = document.querySelectorAll('.activities .card');
     btn.addEventListener('click', function () {
         card.classList.toggle('is-flipped');
     });
+    var card_back = card.querySelector('.card__face--back');
+    card_back.addEventListener('click', function () {
+        card.classList.toggle('is-flipped');
+    });
 });
