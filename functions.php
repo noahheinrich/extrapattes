@@ -36,3 +36,5 @@ add_image_size('card', 290, 290, ['center', 'center']);
 add_image_size('full_card', 330, 390, ['center', 'center']); 
 add_image_size('sponsor', 160, 120, ['center', 'center']);
 add_image_size('activity', 400, 225, ['center', 'center']);
+add_image_size('group_banner', 1240, 500, ['center', 'center']);
+add_image_size('product', 200, 200, ['center', 'center']);
