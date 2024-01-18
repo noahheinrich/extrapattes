@@ -11,12 +11,17 @@
 
 <body>
     <header>
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" alt="" width="" height="" />
-        <?php
-        echo (get_field('site_name', 'option'));
-        ?>
-        <div class="menu-container">
-            <?php wp_nav_menu(array('menu' => 'header')); ?>
+        <div class="header">
+            <div class="main-title">
+                <a href="<?php echo get_site_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" alt="" width="" height="" /></a>
+                <?php
+                echo (get_field('site_name', 'option'));
+                ?>
+            </div>
+            <nav class="menu-container">
+                <?php wp_nav_menu(array('menu' => 'header')); ?>
+                <button>Nous trouver</button>
+                <a class="button" href="<?php echo (get_field('reservation_link', 'option')); ?>">Réserver</a>
+            </nav>
         </div>
-        
     </header>

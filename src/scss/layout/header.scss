@@ -1,0 +1,86 @@
+.header {
+    display: flex;
+    padding: 10px 100px;
+    height: 125px;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.00) 100%);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+
+    .main-title{
+        font-family: 'Westmeath';
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 400;
+        color: #FFF;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .menu-container{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;        
+
+        ul{
+            
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+            
+            
+            li{
+                list-style: none;
+                font-family: "Berlin Bold";
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 700;
+                color: #FFF;
+                letter-spacing: 1.4px;
+
+                a{
+                    text-decoration: none;
+                    color: #FFF;
+                }
+            }
+        }
+
+        button{
+            background: none;
+            margin-left: 24px;
+            margin-right: 8px;
+            display: flex;
+            padding: 20px 24px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100px;
+            border: 1px solid #FFF;
+            font-family: 'Inter';
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 500;
+            color: #FFF;
+        }
+
+        .button{
+            color: #000;
+            display: flex;
+            border: none;
+            padding: 20px 24px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100px;
+            background: #EBC246;
+            font-family: 'Inter';
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+    }
+}
