@@ -1,4 +1,4 @@
-.content{
+.page{
     display: flex;
     flex-direction: row;
     gap: 200px;
@@ -38,10 +38,15 @@
             input[type=tel],
             textarea {
                 width: 100%;
-                padding: 10px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
+                padding: 15px 0 15px 20px;
+                border-radius: 8px;
+                background: rgba(0, 0, 0, 0.05);
+                border: none;
                 box-sizing: border-box;
+                font-family: 'Inter';
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 300;
 
                 &:focus {
                     outline: none;
@@ -64,7 +69,6 @@
                     &:last-child {
                         margin-right: 0;
                     }
-
                 }
             }
 
@@ -81,8 +85,6 @@
                 font-weight: 500;
                 border: none;
                 width: 150px;
-
-
             }
         }
     }

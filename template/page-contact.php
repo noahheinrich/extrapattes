@@ -31,7 +31,7 @@ $coord_facebook = get_field('coord_facebook');
 </section>
 
 <div class="wrap">
-    <div class="content">
+    <div class="page">
         <section class="coords">
             <div class="h2-title">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/coordonnee.svg" alt="" width="100px" height="100px" />

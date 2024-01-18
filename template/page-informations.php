@@ -161,18 +161,24 @@ $faq_title = get_field('faq_title');
         <div class="container">
             <?php
             $rows = get_field('faq');
-            foreach ($rows as $row) {
+            $i = 0;
+            echo '<div class="faq-theme">'; 
+            foreach ($rows as $i => $row) {
                 //var_dump($row['question_answers']);
-                echo '<div class="faq-rect">';
-                echo '<div class="title">';
+                echo '<div class="title" data-id="' . $i . '">';
                 echo '<p>', $row['theme'], '</p>';
                 echo '</div>';
-                echo '<div class="contents">';
+            }
+            echo '</div>';
+            echo '<div class="faq-content">';
+            foreach ($rows as $i => $row) {
+                echo '<div class="contents" data-id="' . $i . '">';
                 foreach ($row['question_answers'] as $question_answer) {
                     //var_dump($question_answer);
                     echo '<div class="content">';
                     echo '<div class="question">';
                     echo '<p>', $question_answer['question'], '</p>';
+                    echo '<img src="' . get_stylesheet_directory_uri() . '/images/Arrow4.svg" alt="" width="20px" height="20px" />';
                     echo '</div>';
                     echo '<div class="answer">';
                     echo '<p>', $question_answer['answer'], '</p>';
@@ -180,24 +186,8 @@ $faq_title = get_field('faq_title');
                     echo '</div>';
                 }
                 echo '</div>';
-                echo '</div>';
             }
-            //     echo '<div class="faq-rect">';
-            //     echo '<p>', $row['theme'], '</p>';
-            //     $questions_answers = get_field('question_answers');
-            //     var_dump($questions_answers);
-            //     foreach ($questions_answers as $question_answer) {
-            //         echo '<div class="content">';
-            //         echo '<div class="question">';
-            //         echo '<p>', $question_answer['question'], '</p>';
-            //         echo '</div>';
-            //         echo '<div class="answer">';
-            //         echo '<p>', $question_answer['answer'], '</p>';
-            //         echo '</div>';
-            //         echo '</div>';
-            //     }
-            //     echo '</div>';
-            //  }
+            echo '</div>';
             ?>
         </div>
     </section>
