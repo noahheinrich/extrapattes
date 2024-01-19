@@ -65,7 +65,7 @@ var_dump(get_the_id());
                                             <p><?php echo $row['age'] ?></p>
                                         </div>
                                         <div class="season">
-                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/vers2.svg" alt="" width="25px" height="25px" />
+                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/patte.svg" alt="" width="25px" height="25px" />
                                             <p><?php echo $row['season_choice'] == 'winter' ? "Activité Hiver" : "Activité 4 saisons" ?></p>
                                         </div>
                                         <div class="time">

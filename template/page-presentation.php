@@ -238,10 +238,10 @@ $sponso_title = get_field('sponso_title');
         </div>
         <div class="container">
             <?php
-            $images = get_field('sponso_logo');
-            foreach ($images as $image) {
+            $rows = get_field('sponso');
+            foreach ($rows as $row) {
                 echo '<div class="sponsor-rect">';
-                echo '<img src="' . $image['sizes']['sponsor'] . '" alt="' . $image['alt'] . '" />';
+                echo '<a href="'. $row['logo_link'] .'"><img src="' . $row['sponso_logo']['sizes']['sponsor'] . '" alt="" /></a>';
                 echo '</div>';
             }
             ?>

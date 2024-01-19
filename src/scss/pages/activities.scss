@@ -25,6 +25,14 @@
         flex-direction: row;
         position: relative;
         overflow: hidden;
+
+        @media screen and (max-width(1024px)){
+            flex-direction: column;
+        }
+
+        @media screen and (max-width(768px)) {
+            //flex-direction: row;
+        }
         
         p.active {
             background-color: #038B99;
@@ -104,6 +112,7 @@
                 border-radius: 16px;
                 border: 2px solid #A7D2E3;
                 background: #FFF;
+                height: 100%;
                 
                 transition: transform 1s;
                 position: relative;
@@ -128,7 +137,7 @@
 
                     &--front {
                         background: white; // Assume you want a white background
-                        justify-content: center;
+                        justify-content: space-between;
                 
                         .top {
                             .title{
@@ -228,6 +237,16 @@
                             }
         
                             .tariff{
+
+                                &:hover{
+                                    background-color: rgba(0,0,0,0.05);
+                                    /* Replace 'grey' with the specific shade of grey you want */
+                                    transition: background-color 0.3s;
+                                    border-radius: 4px;
+                                    /* Smooth transition for the color change */
+                                    
+                                }
+
                                 .menu{
                                     display: flex;
                                     flex-direction: row;
