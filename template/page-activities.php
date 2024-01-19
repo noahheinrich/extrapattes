@@ -42,7 +42,7 @@ var_dump(get_the_id());
             $rows = get_field('activities');
             foreach ($rows as $row) {
             ?>
-                <div class="scene scene--card">
+                <div class="scene scene--card <?php echo $row['season_choice']?> <?php echo $row['season_choice'] == 'seasons' ? 'hidden' : ''?>">
                     <div class="card">
                         <div class="card__face card__face--front">
                             <div class="top">
@@ -66,7 +66,7 @@ var_dump(get_the_id());
                                         </div>
                                         <div class="season">
                                             <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/vers2.svg" alt="" width="25px" height="25px" />
-                                            <p><?php echo $row['season'] ?></p>
+                                            <p><?php echo $row['season_choice'] == 'winter' ? "Activité Hiver" : "Activité 4 saisons" ?></p>
                                         </div>
                                         <div class="time">
                                             <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/Heure1.svg" alt="" width="25px" height="25px" />
@@ -117,7 +117,7 @@ var_dump(get_the_id());
                                     <p><?php echo $row['activity_description'] ?></p>
                                 </div>
                                 <div class="buttons">
-                                    <a class="condition-button" href="<?php echo get_page_link('206')?>#<?php echo $row['condition_section']?>">Conditions d'activités</a>
+                                    <a class="condition-button" href="<?php echo get_page_link('206') ?>#<?php echo $row['condition_section'] ?>">Conditions d'activités</a>
                                     <a class="reservation-button" href="<?php echo $row['booking']; ?>">Réserver</a>
                                 </div>
                             </div>
