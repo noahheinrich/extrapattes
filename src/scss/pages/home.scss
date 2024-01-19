@@ -213,7 +213,6 @@
     .container{
         display: flex;
         flex-direction: row;
-        align-items: center;
         justify-content: center;
         width: 100%;
         gap: 24.5px;
@@ -224,7 +223,6 @@
             flex-direction: column;
             padding: 30px 24px;
             align-items: flex-start;
-            height: 290px;
             border-radius: 5px;
             border: 2px solid #EBC246;
 
