@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const togglePanel = (show) => {
         if (show) {
             // GSAP: Slide in
-            gsap.to(panel, { duration: 0.5, xPercent: 0 });
+            gsap.to(panel, { duration: 0.5, xPercent: 0, ease: 'power3.inOut'});
             panel.classList.add('active');
             overlay.classList.add('active'); // Show the overlay
         } else {
             // GSAP: Slide out
-            gsap.to(panel, { duration: 0.5, xPercent: 100 });
+            gsap.to(panel, { duration: 0.5, xPercent: 100, ease : 'power3.inOut'});
             panel.classList.remove('active');
             overlay.classList.remove('active'); // Hide the overlay
         }

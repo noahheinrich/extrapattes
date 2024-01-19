@@ -39,6 +39,7 @@
     width: 585px;
     z-index: 10000;
     transition: right 0.5s ease-in-out;
+    justify-content: center;
 
     &.active{
         right: 0;

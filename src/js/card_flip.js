@@ -14,7 +14,10 @@ var activities_cards = document.querySelectorAll('.activities .card');
         card.classList.toggle('is-flipped');
     });
     var card_back = card.querySelector('.card__face--back');
-    card_back.addEventListener('click', function () {
-        card.classList.toggle('is-flipped');
+    card_back.addEventListener('click', function (event) {
+        if (event.target.tagName !== 'A') { 
+            card.classList.toggle('is-flipped');
+        }
+        console.log(event);
     });
 });
