@@ -32,7 +32,7 @@ var_dump(get_the_id());
     </section>
     <section class="filter">
         <div class="button">
-            <p class="winter">Activités hiver</p>
+            <p class="winter active">Activités hiver</p>
             <p class="others">Activités 4 saisons</p>
         </div>
     </section>

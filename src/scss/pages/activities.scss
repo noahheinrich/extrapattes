@@ -23,6 +23,26 @@
     .button{
         display: flex;
         flex-direction: row;
+        position: relative;
+        overflow: hidden;
+        
+        p.active {
+            background-color: #038B99;
+            /* Your active state background color */
+            color: white;
+            /* Your active state text color */
+        }
+
+        p {
+            background-color: #FFF;
+            /* Your inactive state background color */
+            color: #038B99;
+            /* Your inactive state text color */
+            transition: background-color 0.3s, color 0.3s;
+            /* Smooth transition for color and background */
+            cursor: pointer;
+            /* Change cursor to indicate clickable items */
+        }
         
         .winter{
             display: flex;
@@ -32,8 +52,6 @@
             align-items: center;
             border-radius: 100px 0px 0px 100px;
             border: 2px solid #038B99;
-            background: #038B99;
-            color: #FFF;
             font-family: 'Inter';
             font-size: 16px;
             font-style: normal;
@@ -48,7 +66,6 @@
             align-items: center;
             border-radius: 0px 100px 100px 0px;
             border: 2px solid #038B99;
-            color: #038B99;
             font-family: 'Inter';
             font-size: 16px;
             font-style: normal;

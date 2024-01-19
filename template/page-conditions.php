@@ -37,7 +37,7 @@ var_dump(get_the_id());
                 foreach ($rows as $row) :
                 ?>
                     <div class="content">
-                        <div class="title">
+                        <div class="title" >
                             <h3><?php echo $row['subtitle']; ?></h3>
                         </div>
                         <div class="text">
