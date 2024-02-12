@@ -10,6 +10,10 @@
         align-items: center;
         justify-content: center;
         gap: 32px;
+
+        @media screen and (max-width:768px) {
+            height: 100dvh;
+        }
         
         
         .title {
@@ -21,6 +25,10 @@
             font-style: normal;
             font-weight: 400;
             line-height: normal; 
+
+            @media screen and (max-width: 767.98px) {
+                font-size: 36px;
+            }
         }
 
        
@@ -29,6 +37,12 @@
             position: absolute;
             bottom: 100px; 
             right: 100px; 
+
+            @media screen and (max-width: 767.98px) {
+                right: 50%;
+                transform: translateX(50%);
+            }
+            
         }
     
         a {
@@ -54,8 +68,17 @@
     align-items: center; 
     margin-top: 50px;
 
+    @media screen and (max-width: 767.98px) {
+        flex-direction: column;
+    }
+
     .intro-image{
         margin-bottom: 50px;
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
     }
 
     .intro-paw {
@@ -65,6 +88,9 @@
         bottom: 0;
         right: 0;
         
+        @media screen and (max-width: 767.98px) {
+            position: relative;
+        }
     }
 
     .intro-text {
@@ -72,12 +98,26 @@
         width: 640px;
         margin-left: 95px;
 
+        @media screen and (max-width: 767.98px) {
+            margin-left: 0;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
         .content {
             font-family: 'Inter';
             font-size: 20px;
             font-style: normal;
             font-weight: 400;
             line-height: 120%; /* 24px */
+
+            @media screen and (max-width: 767.98px) {
+                font-size: 16px;            
+            }
         }
 
         .bold {
@@ -87,6 +127,10 @@
             font-weight: 600;
             line-height: 120%; /* 28.8px */
             margin-bottom: 20px;
+
+            @media screen and (max-width: 767.98px) {
+                font-size: 20px;
+            }
         }
 
         a {
@@ -115,6 +159,11 @@
         width: 100%;
         margin-bottom: 100px;  
         overflow: hidden;    
+
+        @media screen and (max-width: 767.98px) {
+            flex-direction: column;
+            height: 100%;
+        }
 
         .news-rect{
             background-color: #A7D2E3;
