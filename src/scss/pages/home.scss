@@ -167,8 +167,8 @@
 
         .news-rect{
             background-color: #A7D2E3;
-            height: 450px;
-            width: 397px;
+            height: 100%;
+            width: 70%;
             border-radius: 16px;
 
             img{
@@ -182,6 +182,10 @@
                 font-style: normal;
                 font-weight: 600;
                 margin: 32px 24px 0 24px;
+
+                @media screen and (max-width: 767.98px) {
+                    margin: 16px 24px 0 24px;
+                }
             }
 
             .content{
@@ -191,6 +195,10 @@
                 font-weight: 500;
                 line-height: 150%; /* 24px */
                 margin: 0 24px;
+
+                @media screen and (max-width: 767.98px) {
+                    margin: 0 24px 16px 24px;
+                }
             }
         }
     }
@@ -234,6 +242,10 @@
             overflow: hidden;
             height: 1200px;
 
+            @media screen and (max-width: 767.98px) {
+                height: 1300px;
+            }
+
             .gallery-column-original, .gallery-column-clone {
                 display: flex;
                 flex-direction: column;
@@ -242,12 +254,25 @@
                 animation: slideUp 25s linear infinite;  
                 top: 0px;
                 
+                @media screen and (max-width: 767.98px) {
+                    animation: none;
+                }
+
+            }
+            .gallery-column-clone {
+                @media screen and (max-width: 767.98px) {
+                    display: none;
+                }
             }
             
             // le deuxième enfant
             &:nth-child(2) {
                 .gallery-column-original, .gallery-column-clone{
                   animation: slideUp 20s linear infinite 3s; 
+
+                    @media screen and (max-width: 767.98px) {
+                        display: none;
+                    }
                 }   
             }
         }
@@ -258,14 +283,32 @@
 .advice {
     
     margin-bottom: 50px;
+    width: 100%;
+    @media screen and (max-width: 767.98px) {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .h2-title{
+        @media screen and (max-width: 767.98px) {
+            margin-left: -70%;
+        }
+    }
 
     .container{
         display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: center;
         width: 100%;
         gap: 24.5px;
         margin-bottom: 50px;
+
+        @media screen and (max-width: 767.98px) {
+            flex-direction: column;
+            width: 70%;
+        }
 
         .advice-rect {
             display: flex;
@@ -275,12 +318,44 @@
             border-radius: 5px;
             border: 2px solid #EBC246;
 
-            .name{
-                font-family: 'Berlin Bold';
-                font-size: 24px;
-                font-style: normal;
-                font-weight: 700;
+
+            .top{
+                display: flex;
+                flex-direction: column;
+
+                @media screen and (max-width: 767.98px) {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 100%;
+                }
+
+                .name{
+                    font-family: 'Berlin Bold';
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 700;
+
+                    @media screen and (max-width: 767.98px) {
+                        font-size: 20px;
+                    }
+                }
+
+                .stars{
+                    position: relative;
+                    display: inline-flex;
+                    margin-bottom: 24px;
+    
+                    .second-stars{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        overflow: hidden;
+                        width: 20%;
+                    }
+                }
             }
+
 
             .content{
                 font-family: 'Inter';
@@ -289,28 +364,31 @@
                 font-weight: 300;
                 line-height: 140%; /* 22.4px */
                 margin-bottom: 24px;
-            }
 
-            .date{
-                font-family: 'Inter';
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 400;
-            }
-
-            .stars{
-                position: relative;
-                display: inline-flex;
-                margin-bottom: 24px;
-
-                .second-stars{
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    overflow: hidden;
-                    width: 20%;
+                @media screen and (max-width: 767.98px) {
+                    font-size: 12px;
+                    margin-bottom: 0px;
                 }
             }
+
+            .date-container{
+                @media screen and (max-width: 767.98px) {
+                    display: flex;
+                    justify-content: right;
+                    width: 100%;
+                }
+                .date{
+                    font-family: 'Inter';
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+
+                    @media screen and (max-width: 767.98px) {
+                        font-size: 14px;
+                    }
+                }
+            }
+
         }
     }
 

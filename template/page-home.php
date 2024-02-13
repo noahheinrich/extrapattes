@@ -118,6 +118,7 @@ $advices_button = get_field('advice_button');
             $rows = get_field('advices');
             foreach ($rows as $row) {
                 echo '<div class="advice-rect">';
+                echo '<div class="top">';
                 echo '<p class="name">', $row['name'], '</p>';
                 echo '<br>';
                 $stars = $row['stars'];
@@ -129,10 +130,13 @@ $advices_button = get_field('advice_button');
                         echo '<img src="' . get_stylesheet_directory_uri() . '/images/starsjaune.jpg" alt="" width="" height="" />';
                     echo '</div>';
                 echo '</div>';
+                echo '</div>';
                 echo '<br>';
                 echo '<p class="content">', $row['advice_content'], '</p>';
                 echo '<br>';
+                echo '<div class="date-container">';
                 echo '<p class="date">', $row['date'], '</p>';
+                echo '</div>';
                 echo '</div>';
             }
             ?>
